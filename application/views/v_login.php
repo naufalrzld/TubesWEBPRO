@@ -34,8 +34,19 @@
 				</div>
 				<div class="card">
 					<div class="row">
+						<?php
+							if (isset($error)) {
+						?>
 						<div class="col-sm-12">
-							<input type="text" class="form-control" aria-describedby="inputGroup-sizing-default" placeholder="E-mail / Username" name="username">
+							<div class="alert alert-danger">
+								<?php echo $error ?>
+							</div>
+						</div>
+						<?php
+							}
+						?>
+						<div class="col-sm-12">
+							<input type="text" class="form-control username" aria-describedby="inputGroup-sizing-default" placeholder="E-mail / Username" name="username">
 						</div>
 						<div class="col-sm-12">
 							<input type="password" class="form-control password" aria-describedby="inputGroup-sizing-default" placeholder="Password" name="password">

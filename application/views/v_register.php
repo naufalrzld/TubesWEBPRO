@@ -34,7 +34,7 @@
 			<form action="<?php echo site_url("register/addNewUser")?>" method="post">
 				<div class="row form-register">
 				<div class="col-sm-12">
-					<input type="text" class="form-control" aria-describedby="inputGroup-sizing-default" placeholder="Nama Lengkap">
+					<input type="text" class="form-control" aria-describedby="inputGroup-sizing-default" placeholder="Nama Lengkap" name="name">
 				</div>
 				</div>
 				<div class="row form-register">
@@ -44,13 +44,13 @@
 				</div>
 				<div class="row form-register">
 					<div class="col-sm-12">
-						<input type="radio" name="jk" value="male" checked> Laki-laki
-						<input id="rbPerempuan" type="radio" name="jk" value="female"> Perempuan
+						<input type="radio" name="jk" value="1" checked> Laki-laki
+						<input id="rbPerempuan" type="radio" name="jk" value="0"> Perempuan
 					</div>
 				</div>
 				<div class="row form-register">
 					<div class="col-sm-12">
-						<input type="text" class="form-control" aria-describedby="inputGroup-sizing-default" placeholder="Nomor Telepon">
+						<input type="text" class="form-control" aria-describedby="inputGroup-sizing-default" placeholder="Nomor Telepon" name="no_tlp">
 					</div>
 				</div>
 				<div class="row form-register">

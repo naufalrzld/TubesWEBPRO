@@ -141,6 +141,9 @@ img {
 	border: none;
 	border-radius: 5px;
 }
+.username {
+  margin-top: 10px;
+}
 .password {
 	margin-top: 10px;
 }

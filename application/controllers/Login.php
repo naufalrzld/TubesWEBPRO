@@ -38,7 +38,7 @@
 				redirect("dashboard");
 			} else {
 				//Feedback, informasi bahwa login gagal karena username/password salah
-				$this->session->set_flashdata("error", "Username atau Password salah");
+				$this->session->set_flashdata("error", "Username atau Password salah!");
 				
 				//Kalau login gagal, arahkan ke Controller Login
 				redirect("login");

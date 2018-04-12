@@ -10,15 +10,28 @@
 		}
 
 		function addNewUser() {
+			$name = $this->input->post("name");
 			$email = $this->input->post("email");
+			$jk = $this->input->post("jk");
+			$no_tlp = $this->input->post("no_tlp");
 			$password = $this->input->post("password");
-			$data = array(
+
+			$data_login = array(
 				"email" => $email,
 				"password" => $password
 			);
-			print_r($data);
+
+			$data_member = array(
+				"email" => $email,
+				"nama" => $name,
+				"no_tlp" => $no_tlp,
+				"jenis_kelamin" => $jk
+			);
+
+			print_r($data_member);
+
 			$this->load->model("register_model");
-			$this->register_model->create($data);
+			$this->register_model->create($data_login, $data_member);
 			
 			//Mengarahkan ke satu halaman
 			redirect("login");
