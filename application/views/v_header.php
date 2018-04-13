@@ -1,4 +1,3 @@
-<!--Tambah Komentar-->
 <!DOCTYPE html>
 <html>
 <head>
