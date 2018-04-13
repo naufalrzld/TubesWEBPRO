@@ -1,3 +1,4 @@
+<!--Tambah Komentar-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,6 +31,9 @@
 					<div class="signup-area d-flex align-items-center justify-content-end">
 						<div class="d-flex">
 							<div class="login-or-register">
+								<?php
+									
+								?>
 								<a href="<?php echo site_url('login');?>">
 									<button class="btn btn-outline-light">Masuk/Daftar</button>
 								</a>
