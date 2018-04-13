@@ -6,7 +6,6 @@
 			    <li data-target="#demo" data-slide-to="0" class="active"></li>
 			    <li data-target="#demo" data-slide-to="1"></li>
 			    <li data-target="#demo" data-slide-to="2"></li>
-				<!--Test-->
 			  </ul>
          <div class="carousel-inner">
           <div class="carousel-item active">
