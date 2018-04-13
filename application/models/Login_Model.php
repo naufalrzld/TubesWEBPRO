@@ -5,13 +5,13 @@
 	* 
 	*/
 	class Login_Model extends CI_Model {
-		function read($where="") {
-			if(!empty($where)) $this->db->where($where);
+		function read($email, $password) {
+			// if(!empty($where)) $this->db->where($where);
+			$query = $this->db->query("SELECT m.member_id, m.email, m.nama, m.no_tlp, m.jenis_kelamin 
+				FROM member m, login l WHERE l.email=m.email AND l.email='$email' AND l.password='$password'");
 			
-			$query = $this->db->get("login");
-			
-			if($query AND $query->num_rows() != 0) {
-				return $query->result();
+			if($query->num_rows() != 0) {
+				return $query->row();
 			} else {
 				return array();
 			}

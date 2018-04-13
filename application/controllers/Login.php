@@ -17,14 +17,9 @@
 			$email = $this->input->post("username");
 			$password = $this->input->post("password");
 			
-			//Ambil data berdasarkan WHERE username = 'xxx' AND password = md5('xxx')
-			$where = array(
-				"email" => $email,
-				"password" => $password
-			);
 			
 			$this->load->model("login_model");
-			$result = $this->login_model->read($where);
+			$result = $this->login_model->read($email, $password);
 			
 			//Jika data ditemukan (jumlah data tidak sama dengan nol)
 			if (count($result) != 0) {
@@ -32,7 +27,9 @@
 				//Set Session untuk user yang login
 				//Set session menggunakan sintax dibawah ini
 				//$this->session->set_userdata("nama_session", "value")
-				$this->session->set_userdata("username", $username);
+
+				$nama = $result->nama;
+				$this->session->set_userdata("nama", $nama);
 				
 				//Kalau login berhasil, arahkan ke Controller Home
 				redirect("dashboard");
@@ -47,7 +44,7 @@
 		
 		function logout(){
 			$this->session->sess_destroy();
-			redirect("login");
+			redirect("dashboard");
 		}
 	}
 ?>
