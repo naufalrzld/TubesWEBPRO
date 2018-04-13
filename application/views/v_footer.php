@@ -1,4 +1,3 @@
-<!--Test-->
 <!-- footer -->
       <!--Footer-->
       <footer class="page-footer font-small blue-grey lighten-5 pt-0">
