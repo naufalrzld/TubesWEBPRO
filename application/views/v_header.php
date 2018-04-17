@@ -41,8 +41,8 @@
 								    ?>
 								  </button>
 								  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-								    <a class="dropdown-item" href="#">Action</a>
-								    <a class="dropdown-item" href="#">Another action</a>
+								    <a class="dropdown-item" href="<?php echo site_url("Profil") ?>">Profil</a>
+								    <a class="dropdown-item" href="#">Buka Toko</a>
 								    <div class="dropdown-divider"></div>
 								    <a class="dropdown-item" href="<?php echo site_url("login/logout") ?>">Logout</a>
 								  </div>

@@ -54,8 +54,8 @@
             <h6 style="color: red; font-weight: bold; font-family: Arial; ">Rp.30.000</h6>
           </div>
           <div class="tombol-beli">
-            <a href="detail_barang.html" class="btn btn-outline-danger btn-block mx-auto" role="button" aria-pressed="true">Detail Barang</a>
-            <a href="detail_barang.html" class="btn btn-outline-danger btn-block mx-auto" role="button" aria-pressed="true">Beli</a>
+            <a href="<?php echo site_url('detail_barang');?>" class="btn btn-outline-danger btn-block mx-auto" role="button" aria-pressed="true">Detail Barang</a>
+            <a href="<?php echo site_url('detail_barang');?>" class="btn btn-outline-danger btn-block mx-auto" role="button" aria-pressed="true">Beli</a>
           </div>
         </div>        
       </div>
