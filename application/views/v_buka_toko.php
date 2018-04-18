@@ -40,20 +40,8 @@
 								    	echo $nama;
 								    ?>
 								  </button>
-								  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">	
-								    <?php 
-								    	$has_toko = $this->session->userdata("has_toko");
-								    	if($has_toko == 0){
-								     ?>
-								     <a class="dropdown-item" href="<?php echo site_url("buka_toko") ?>">Buka Toko</a>
-								     <?php
-								 		}
-								 		else{
-								 	  ?>
-								 	  <a class="dropdown-item" href="#">Kelola Toko</a>
-								 	  <?php
-								 		}
-								 	  ?>
+								  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+								    <a class="dropdown-item" href="<?php echo site_url("buka_toko") ?>">Buka Toko</a>
 								    <a class="dropdown-item" href="#">Another action</a>
 								    <div class="dropdown-divider"></div>
 								    <a class="dropdown-item" href="<?php echo site_url("login/logout") ?>">Logout</a>
@@ -77,3 +65,35 @@
 		</div>
 	</div>
   <!-- Navigation Bar End -->
+<div class="container">
+		<div class="register">
+			<div class="header">
+				<h2>Formulir Buka Toko</h2>
+			</div>
+			<form action="<?php echo site_url("buka_toko/buat_toko")?>" method="post">
+				<div class="row form-register">
+					<div class="col-sm-12">
+						<input type="text" class="form-control" aria-describedby="inputGroup-sizing-default" placeholder="Nama Toko" name="name">
+					</div>
+				</div>
+				<div class="row form-register">
+					<div class="col-sm-12">
+						<textarea rows="4" cols="50" class="form-control" aria-describedby="inputGroup-sizing-default" placeholder="Deskripsi Toko" name="desc"></textarea>
+					</div>
+				</div>
+				<div class="row form-register">
+					<div class="col-sm-12">
+						<textarea rows="4" cols="50" class="form-control" aria-describedby="inputGroup-sizing-default" placeholder="Alamat" name="alamat"></textarea>
+					</div>
+				</div>
+				
+				<div class="row form-register">
+					<div class="col-sm-12">
+						<button class="btn btn-outline-danger btn-login">Buka Toko</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

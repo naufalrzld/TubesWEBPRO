@@ -19,6 +19,7 @@
 			
 			
 			$this->load->model("login_model");
+			$this->load->model("toko_model");
 			$result = $this->login_model->read($email, $password);
 			
 			//Jika data ditemukan (jumlah data tidak sama dengan nol)
@@ -27,8 +28,15 @@
 				//Set Session untuk user yang login
 				//Set session menggunakan sintax dibawah ini
 				//$this->session->set_userdata("nama_session", "value")
+				$data = array(
+					"member_id" => $result->member_id
+				);
+				$toko = $this->toko_model->cek_toko($data);
+				$this->session->set_userdata("has_toko", $toko);
 
 				$nama = $result->nama;
+				$member_id = $result->member_id;
+				$this->session->set_userdata("member_id", $member_id);
 				$this->session->set_userdata("nama", $nama);
 				
 				//Kalau login berhasil, arahkan ke Controller Home
