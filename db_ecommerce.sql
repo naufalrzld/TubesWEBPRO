@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 12, 2018 at 02:40 PM
--- Server version: 10.1.29-MariaDB
--- PHP Version: 7.2.0
+-- Generation Time: 18 Apr 2018 pada 12.03
+-- Versi Server: 10.1.28-MariaDB
+-- PHP Version: 7.1.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `login`
+-- Struktur dari tabel `login`
 --
 
 CREATE TABLE `login` (
@@ -34,7 +34,7 @@ CREATE TABLE `login` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `login`
+-- Dumping data untuk tabel `login`
 --
 
 INSERT INTO `login` (`email`, `password`) VALUES
@@ -45,7 +45,7 @@ INSERT INTO `login` (`email`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `member`
+-- Struktur dari tabel `member`
 --
 
 CREATE TABLE `member` (
@@ -57,13 +57,35 @@ CREATE TABLE `member` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `member`
+-- Dumping data untuk tabel `member`
 --
 
 INSERT INTO `member` (`member_id`, `email`, `nama`, `no_tlp`, `jenis_kelamin`) VALUES
 (1, 'naufalrzld@gmail.com', 'Mochammad Naufal Rizaldi', '087722390424', 1),
 (2, 'icang@gmail.com', 'M. Faisal Nur', '082112345678', 1),
 (3, 'nurliaha@gmail.com', 'Nurliah Awaliah', '082212345678', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `toko`
+--
+
+CREATE TABLE `toko` (
+  `toko_id` int(11) NOT NULL,
+  `member_id` int(11) NOT NULL,
+  `nama_toko` varchar(50) NOT NULL,
+  `deskripsi` text NOT NULL,
+  `alamat` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `toko`
+--
+
+INSERT INTO `toko` (`toko_id`, `member_id`, `nama_toko`, `deskripsi`, `alamat`) VALUES
+(1, 1, 'refew', 'fweff', 'wefwef'),
+(2, 2, 'efewfw', 'fewfw', 'fewwe');
 
 --
 -- Indexes for dumped tables
@@ -83,6 +105,13 @@ ALTER TABLE `member`
   ADD KEY `email` (`email`);
 
 --
+-- Indexes for table `toko`
+--
+ALTER TABLE `toko`
+  ADD PRIMARY KEY (`toko_id`),
+  ADD KEY `member_id` (`member_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -93,14 +122,26 @@ ALTER TABLE `member`
   MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- Constraints for dumped tables
+-- AUTO_INCREMENT for table `toko`
+--
+ALTER TABLE `toko`
+  MODIFY `toko_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `member`
+-- Ketidakleluasaan untuk tabel `member`
 --
 ALTER TABLE `member`
   ADD CONSTRAINT `member_ibfk_1` FOREIGN KEY (`email`) REFERENCES `login` (`email`) ON DELETE CASCADE;
+
+--
+-- Ketidakleluasaan untuk tabel `toko`
+--
+ALTER TABLE `toko`
+  ADD CONSTRAINT `toko_ibfk_1` FOREIGN KEY (`member_id`) REFERENCES `member` (`member_id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
