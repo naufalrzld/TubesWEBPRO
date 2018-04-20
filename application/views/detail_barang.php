@@ -3,13 +3,12 @@
 <head>
 	<title>E-Commerce</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	<link rel="stylesheet" type="text/js" href="js/bootstrap.min.js">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets')?>/css/bootstrap.css">
+	<link rel="stylesheet" type="text/js" href="<?php echo base_url('assets')?>/js/bootstrap.min.js">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/mycss.css">
-
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets')?>/css/mycss.css">
 </head>
 <body>
 	<div class="top_header_area">
@@ -53,12 +52,12 @@
 					<div class="container coba">
 						<div id="blabla" class="row">
 							<div class="col-md-6">
-								<img class="gbr_produk" src="image/baju.jpg">
+								<img class="gbr_produk" src="<?php echo base_url('assets')?>/image/barang/<?php echo $barang->images; ?> ">
 							</div>
 							<div class="col-md-6">
-								<h6 class="judul_p">BEST SELLER- GAMIS BAHAN BALOTELI IMPORT high quality</h6>
+								<h6 class="judul_p"><?php echo $barang->nama_barang; ?></h6>
 								<hr class="onepixel">
-								<h3 class="harga" align="left">Rp. 30.000</h3>
+								<h3 class="harga" align="left">Rp. <?php echo $barang->harga; ?></h3>
 								<button id="button_beli" class="btn btn-outline-danger btn-login">Beli</button>
 							</div>
 						</div>
@@ -92,7 +91,7 @@
 							<p class="text-left">Infromasi</p>
 						</div>
 						<div class="col-md-7">
-							<p class="text-left">Kosdisi baik</p>
+							<p class="text-left"><?php echo $barang->informasi; ?></p>
 						</div>						
 					</div>
 					<div class="row">
@@ -100,7 +99,7 @@
 							<p class="text-left">Spesifikasi</p>
 						</div>
 						<div class="col-md-7">
-							<p class="text-left">Kosdisi baik</p>
+							<p class="text-left"><?php echo $barang->spesifikasi; ?></p>
 						</div>						
 					</div>
 					<div class="row">
@@ -108,7 +107,7 @@
 							<p class="text-left">Deskripsi</p>
 						</div>
 						<div class="col-md-7">
-							<p class="text-left">Ini Deskripsi</p>
+							<p class="text-left"><?php echo $barang->deskripsi; ?></p>
 						</div>						
 					</div>
 					<div class="row">
@@ -116,7 +115,7 @@
 							<p class="text-left">Catatan</p>
 						</div>
 						<div class="col-md-7">
-							<p class="text-left">Ini Catatan</p>
+							<p class="text-left"><?php echo $barang->catatan; ?></p>
 						</div>						
 					</div>
 				</div>
