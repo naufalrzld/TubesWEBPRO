@@ -32,7 +32,7 @@
 					"member_id" => $result->member_id
 				);
 				$toko = $this->toko_model->cek_toko($data);
-				$this->session->set_userdata("has_toko", $toko);
+				$this->session->set_userdata("has_toko", $toko->toko_id);
 
 				$nama = $result->nama;
 				$member_id = $result->member_id;
