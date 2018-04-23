@@ -15,7 +15,7 @@
 			$query = $this->db->get("toko");
 
 			if($query and $query->num_rows()!=0){
-				return 1;
+				return $query->row();
 			}
 			else{
 				return 0;

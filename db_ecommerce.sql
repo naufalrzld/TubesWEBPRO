@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 18 Apr 2018 pada 12.03
+-- Generation Time: 23 Apr 2018 pada 14.22
 -- Versi Server: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -21,6 +21,31 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_ecommerce`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `barang`
+--
+
+CREATE TABLE `barang` (
+  `barang_id` int(11) NOT NULL,
+  `toko_id` int(11) NOT NULL,
+  `images` varchar(100) NOT NULL DEFAULT 'default.png',
+  `nama_barang` varchar(255) NOT NULL,
+  `harga` int(11) NOT NULL,
+  `informasi` varchar(255) NOT NULL,
+  `spesifikasi` text NOT NULL,
+  `deskripsi` text NOT NULL,
+  `catatan` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `barang`
+--
+
+INSERT INTO `barang` (`barang_id`, `toko_id`, `images`, `nama_barang`, `harga`, `informasi`, `spesifikasi`, `deskripsi`, `catatan`) VALUES
+(3, 1, 'akame.jpg', '', 475000, 'Baru', 'RAM Kingston kapasitas 4 GB', 'Bagus cuk', 'Masih baru cuk buruan beli');
 
 -- --------------------------------------------------------
 
@@ -92,6 +117,13 @@ INSERT INTO `toko` (`toko_id`, `member_id`, `nama_toko`, `deskripsi`, `alamat`) 
 --
 
 --
+-- Indexes for table `barang`
+--
+ALTER TABLE `barang`
+  ADD PRIMARY KEY (`barang_id`),
+  ADD KEY `barang_toko` (`toko_id`);
+
+--
 -- Indexes for table `login`
 --
 ALTER TABLE `login`
@@ -116,6 +148,12 @@ ALTER TABLE `toko`
 --
 
 --
+-- AUTO_INCREMENT for table `barang`
+--
+ALTER TABLE `barang`
+  MODIFY `barang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `member`
 --
 ALTER TABLE `member`
@@ -130,6 +168,12 @@ ALTER TABLE `toko`
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
+
+--
+-- Ketidakleluasaan untuk tabel `barang`
+--
+ALTER TABLE `barang`
+  ADD CONSTRAINT `barang_toko` FOREIGN KEY (`toko_id`) REFERENCES `toko` (`toko_id`);
 
 --
 -- Ketidakleluasaan untuk tabel `member`
