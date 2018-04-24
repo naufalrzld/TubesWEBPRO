@@ -34,6 +34,15 @@
 				$toko = $this->toko_model->cek_toko($data);
 				$this->session->set_userdata("has_toko", $toko->toko_id);
 
+				$sessionarray = array(
+					"member_id" => $result->member_id,
+					"email" => $result->email,
+					"nama" => $result->nama,
+					"no_tlp" => $result->no_tlp
+
+				);
+				$this->session->set_userdata('datauser',$sessionarray);
+
 				$nama = $result->nama;
 				$member_id = $result->member_id;
 				$this->session->set_userdata("member_id", $member_id);
