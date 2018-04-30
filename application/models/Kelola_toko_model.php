@@ -9,7 +9,8 @@
 			//Bentuk Umum: $this->db->insert("nama_table", $data);
 			$this->db->insert("barang", $data);
 		}
-		function get_data(){
+		function get_data($toko_id){
+			$query = $this->db->where("toko_id", $toko_id);
 			$query = $this->db->get("barang");
 			return $query->result_array();
 		}
@@ -20,6 +21,6 @@
 		function delete($barang_id) {
 			$this->db->where("barang_id", $barang_id);
 			$this->db->delete("barang");
-		}	
+		}
 	}
 ?>

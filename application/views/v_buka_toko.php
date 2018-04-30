@@ -70,7 +70,7 @@
 			<div class="header">
 				<h2>Formulir Buka Toko</h2>
 			</div>
-			<form action="<?php echo site_url("buka_toko/buat_toko")?>" method="post">
+			<form action="<?php echo site_url("buka_toko/buat_toko")?>" method="post" enctype="multipart/form-data">
 				<div class="row form-register">
 					<div class="col-sm-12">
 						<input type="text" class="form-control" aria-describedby="inputGroup-sizing-default" placeholder="Nama Toko" name="name">
@@ -86,7 +86,12 @@
 						<textarea rows="4" cols="50" class="form-control" aria-describedby="inputGroup-sizing-default" placeholder="Alamat" name="alamat"></textarea>
 					</div>
 				</div>
-				
+				<div class="row form-register">
+					<div class="col-sm-12">
+
+						<input type="file" name="userfile" size="20" />
+					</div>
+				</div>
 				<div class="row form-register">
 					<div class="col-sm-12">
 						<button class="btn btn-outline-danger btn-login">Buka Toko</button>

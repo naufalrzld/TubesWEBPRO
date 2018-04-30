@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 23 Apr 2018 pada 14.22
+-- Generation Time: 24 Apr 2018 pada 09.02
 -- Versi Server: 10.1.28-MariaDB
 -- PHP Version: 7.1.11
 
@@ -45,7 +45,8 @@ CREATE TABLE `barang` (
 --
 
 INSERT INTO `barang` (`barang_id`, `toko_id`, `images`, `nama_barang`, `harga`, `informasi`, `spesifikasi`, `deskripsi`, `catatan`) VALUES
-(3, 1, 'akame.jpg', '', 475000, 'Baru', 'RAM Kingston kapasitas 4 GB', 'Bagus cuk', 'Masih baru cuk buruan beli');
+(4, 3, 'akame1.jpg', 'efw', 45354, 'rbhgrtf', 'bgfrbg', 'bgfrbfg', 'bfgbfg'),
+(5, 3, 'background_desktop1.jpg', 'gregre', 45345, 'gfbfg', 'bgfbgfb', 'bfgbgf', 'bgfbfgbf');
 
 -- --------------------------------------------------------
 
@@ -65,7 +66,8 @@ CREATE TABLE `login` (
 INSERT INTO `login` (`email`, `password`) VALUES
 ('icang@gmail.com', 'icang'),
 ('naufalrzld@gmail.com', 'naufalrizaldi'),
-('nurliaha@gmail.com', 'nurliaha');
+('nurliaha@gmail.com', 'nurliaha'),
+('tes@gmail.com', 'test');
 
 -- --------------------------------------------------------
 
@@ -88,7 +90,8 @@ CREATE TABLE `member` (
 INSERT INTO `member` (`member_id`, `email`, `nama`, `no_tlp`, `jenis_kelamin`) VALUES
 (1, 'naufalrzld@gmail.com', 'Mochammad Naufal Rizaldi', '087722390424', 1),
 (2, 'icang@gmail.com', 'M. Faisal Nur', '082112345678', 1),
-(3, 'nurliaha@gmail.com', 'Nurliah Awaliah', '082212345678', 0);
+(3, 'nurliaha@gmail.com', 'Nurliah Awaliah', '082212345678', 0),
+(4, 'tes@gmail.com', 'test', '51521052', 1);
 
 -- --------------------------------------------------------
 
@@ -101,16 +104,17 @@ CREATE TABLE `toko` (
   `member_id` int(11) NOT NULL,
   `nama_toko` varchar(50) NOT NULL,
   `deskripsi` text NOT NULL,
-  `alamat` text NOT NULL
+  `alamat` text NOT NULL,
+  `gambar` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `toko`
 --
 
-INSERT INTO `toko` (`toko_id`, `member_id`, `nama_toko`, `deskripsi`, `alamat`) VALUES
-(1, 1, 'refew', 'fweff', 'wefwef'),
-(2, 2, 'efewfw', 'fewfw', 'fewwe');
+INSERT INTO `toko` (`toko_id`, `member_id`, `nama_toko`, `deskripsi`, `alamat`, `gambar`) VALUES
+(3, 1, 'fewfw', 'ewfwe', 'fewfwe', 'background_desktop.jpg'),
+(4, 4, 'test', 'regre', 'gergre', '');
 
 --
 -- Indexes for dumped tables
@@ -151,19 +155,19 @@ ALTER TABLE `toko`
 -- AUTO_INCREMENT for table `barang`
 --
 ALTER TABLE `barang`
-  MODIFY `barang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `barang_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `member`
 --
 ALTER TABLE `member`
-  MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `member_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `toko`
 --
 ALTER TABLE `toko`
-  MODIFY `toko_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `toko_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

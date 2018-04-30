@@ -1,49 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>E-Commerce</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets')?>/css/bootstrap.css">
-	<link rel="stylesheet" type="text/js" href="<?php echo base_url('assets')?>/js/bootstrap.min.js">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url('assets')?>/css/mycss.css">
-</head>
-<body>
-	<div class="top_header_area">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3">
-					<div class="web-tittle">
-						<a href="index.html">
-							<img class="img-header-logo" src="image/bukalapak.svg">
-						</a>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="search-container">
-						<form action="#">
-							<input type="text" placeholder="Search.." name="search">
-							<button type="submit"><i class="fa fa-search"></i></button>
-						</form>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<div class="signup-area d-flex align-items-center justify-content-end">
-						<div class="d-flex">
-							<div class="login-or-register">
-								<a href="login.html">
-									<button class="btn btn-outline-light">Masuk/Daftar</button>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
 	<div class="container">
 		<div class="row">
 			<!-- Barang -->
@@ -52,7 +6,7 @@
 					<div class="container coba">
 						<div id="blabla" class="row">
 							<div class="col-md-6">
-								<img class="gbr_produk" src="<?php echo base_url('assets')?>/image/barang/<?php echo $barang->images; ?> ">
+								<img class="gbr_produk" src="<?php echo base_url('assets')?>/image/uploads/<?php echo $barang->images; ?> ">
 							</div>
 							<div class="col-md-6">
 								<h6 class="judul_p"><?php echo $barang->nama_barang; ?></h6>
@@ -69,7 +23,7 @@
 				<label>Pelapak</label>
 					<div class="row">
 						<div class="col-4">
-							<img class="gbr_pelapak" src="image/baju.jpg">
+							<img class="gbr_pelapak" src="<?php echo base_url('assets') ?>/image/uploads/default.png">
 						</div>
 						<div class="col">
 							<a href="#" class="nm_pelapak">Icang Store</a><br>
@@ -122,90 +76,3 @@
 			</div>
 		</div>
 	</div>
-	<!-- footer -->
-      <!--Footer-->
-      <footer class="page-footer font-small blue-grey lighten-5 pt-0">
-          <div style="background-color: #c40c41;">
-              <div class="container">
-                  <!--Grid row-->
-                  <div class="row py-4 d-flex align-items-center">
-                      <!--Grid column-->
-                      <div class="col-12 col-md-5 text-left mb-4 mb-md-0">
-                          <h6 class="mb-0 white-text text-center text-md-left" style="color: white">Get connected with us on social networks!
-                          </h6>
-                      </div>
-                      <!--Grid column-->
-                      <!--Grid column-->
-                      <div class="col-12 col-md-7 text-center text-md-right">
-                          <!--Facebook-->
-                          <a class="fb-ic ml-0"><i class="fa fa-facebook white-text mr-lg-4"> </i></a>
-                          <!--Twitter-->
-                          <a class="tw-ic"><i class="fa fa-twitter white-text mr-lg-4"> </i></a>
-                          <!--Google +-->
-                          <a class="gplus-ic"><i class="fa fa-google-plus white-text mr-lg-4"> </i></a>
-                          <!--Linkedin-->
-                          <a class="li-ic"><i class="fa fa-linkedin white-text mr-lg-4"> </i></a>
-                          <!--Instagram-->
-                          <a class="ins-ic"><i class="fa fa-instagram white-text mr-lg-4"> </i></a>
-                      </div>
-                      <!--Grid column-->
-                  </div>
-                  <!--Grid row-->
-              </div>
-          </div>
-          <!--Footer Links-->
-          <div class="container mt-5 mb-4 text-center text-md-left">
-              <div class="row mt-3">
-                  <!--First column-->
-                  <div class="col-md-3 col-lg-4 col-xl-3 mb-4 dark-grey-text">
-                      <h6 class="title font-weight-bold"><strong>Company name</strong></h6>
-                      <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                      <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit
-                          amet, consectetur adipisicing elit.
-                      </p>
-                  </div>
-                  <!--/.First column-->
-                  <!--Second column-->
-                  <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 dark-grey-text">
-                      <h6 class="title font-weight-bold"><strong>Products</strong></h6>
-                      <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                      <p><a href="#!" class="dark-grey-text">MDBootstrap</a></p>
-                      <p><a href="#!" class="dark-grey-text">MDWordPress</a></p>
-                      <p><a href="#!" class="dark-grey-text">BrandFlow</a></p>
-                      <p><a href="#!" class="dark-grey-text">Bootstrap Angular</a></p>
-                  </div>
-                  <!--/.Second column-->
-                  <!--Third column-->
-                  <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 dark-grey-text">
-                      <h6 class="title font-weight-bold"><strong>Useful links</strong></h6>
-                      <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                      <p><a href="#!" class="dark-grey-text">Your Account</a></p>
-                      <p><a href="#!" class="dark-grey-text">Become an Affiliate</a></p>
-                      <p><a href="#!" class="dark-grey-text">Shipping Rates</a></p>
-                      <p><a href="#!" class="dark-grey-text">Help</a></p>
-                  </div>
-                  <!--/.Third column-->
-                  <!--Fourth column-->
-                  <div class="col-md-4 col-lg-3 col-xl-3 dark-grey-text">
-                      <h6 class="title font-weight-bold"><strong>Contact</strong></h6>
-                      <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                      <p><i class="fa fa-home mr-3"></i> New York, NY 10012, US</p>
-                      <p><i class="fa fa-envelope mr-3"></i> info@example.com</p>
-                      <p><i class="fa fa-phone mr-3"></i> + 01 234 567 88</p>
-                      <p><i class="fa fa-print mr-3"></i> + 01 234 567 89</p>
-                  </div>
-                  <!--/.Fourth column-->
-              </div>
-          </div>
-          <!--/.Footer Links-->
-          <!-- Copyright-->
-          <div class="footer-copyright py-3 text-center">
-              <div class="container-fluid">
-                  © 2017 Copyright: <a href="https://mdbootstrap.com/material-design-for-bootstrap/"><strong> coba.com</strong></a>
-              </div>
-          </div>
-          <!--/.Copyright -->
-      </footer>
-      <!--/.Footer-->
-</body>
-</html>

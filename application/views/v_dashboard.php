@@ -45,8 +45,8 @@
         <div class="col-md-2 col-sm-4 col-xs-6">
           <div class="frame-produk">
             <div class="pro-gambar">
-              <a target="_blank" href="<?php echo base_url("assets")?>/image/baju.jpg">
-                <img src="<?php echo base_url('assets')?>/image/barang/<?php echo $barang['images']; ?> " class="produk img-fluid" alt="Baju">
+              <a target="_blank" href="<?php echo base_url("assets")?>/image/uploads/default.jpg">
+                <img src="<?php echo base_url('assets')?>/image/uploads/<?php echo $barang['images']; ?> " class="produk img-fluid" alt="Baju">
                 <!-- <img src="image/baju.jpg" class="img-fluid" alt="Trolltunga Norway" width="300px" height="200px" style="width: 175px; height: auto;"> -->
               </a>
             </div>        
@@ -56,12 +56,56 @@
             </div>
             <div class="tombol-beli">
               <a href="<?php echo base_url('dashboard/detail')?>/<?php echo $barang['barang_id']; ?> " class="btn btn-outline-danger btn-block mx-auto" role="button" aria-pressed="true">Detail Barang</a>
-              <a href="detail_barang.html" class="btn btn-outline-danger btn-block mx-auto" role="button" aria-pressed="true">Beli</a>
+              <button class="btn btn-outline-danger btn-block mx-auto" data-toggle="modal" data-target="#addCart<?= $barang['barang_id']; ?>">Beli</button>
             </div>
-          </div>        
+            <div class="modal fade" id="addCart<?= $barang['barang_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h3 class="modal-title" id="exampleModalLabel">Tambah ke keranjang</h3>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                          </button>
+                      </div>
+                      <form action="<?php echo site_url('dashboard/addToCart') ?>" method="post">
+                        <div class="modal-body">
+                          <div class="row-fluid">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                              <img src="<?php echo base_url('assets')?>/image/uploads/<?php echo $barang['images']; ?> " class="produk img-fluid" alt="Baju">
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              <input type="hidden" name="barang_id" value="<?= $barang["barang_id"] ?>">
+                              <h3><label><?php echo $barang['nama_barang']; ?></label></h3>
+                              <input type="hidden" name="nama_barang" value="<?= $barang["nama_barang"] ?>">
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              Harga
+                              <label><?php echo $barang['harga']; ?></label>
+                              <input type="hidden" name="harga" value="<?= $barang["harga"] ?>">
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                              Jumlah
+                              <input type="number" name="quantity" min="1" value="1" class="quantity form-control">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
+                          <button type="submit" class="add_cart btn btn-primary">Tambah</button>
+                        </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+          </div>
         </div>
       <?php endforeach; ?>
       </div>
+      <center>
+        <?php if (isset($links)) { ?>
+                <?php echo $links ?>
+      <?php } ?>
+      </center>
     </div>
     <!-- List Barang End -->
 	</div>

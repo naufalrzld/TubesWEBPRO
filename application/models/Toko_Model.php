@@ -8,6 +8,8 @@
 		function create($data){
 			//Bentuk Umum: $this->db->insert("nama_table", $data);
 			$this->db->insert("toko", $data);
+			$insertId = $this->db->insert_id();
+			return $insertId;
 		}
 
 		function cek_toko($data){

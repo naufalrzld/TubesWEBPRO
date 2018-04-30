@@ -5,14 +5,18 @@
 			$this->load->model('kelola_toko_model');
 		}
 		function index() {
+			$toko_id =  $this->session->userdata("has_toko");
+
+			$data["dataBrg"] = $this->kelola_toko_model->get_data($toko_id);
 			$this->load->view("v_header");
-			$data["dataBrg"] = $this->kelola_toko_model->get_data();
 			$this->load->view("v_kelola_toko", $data);
+			$this->load->view('v_footer');
 		}
 
 		function tambah_barang() {
-			$this->load->view("v_header");
+			$this->load->view('v_header');
 			$this->load->view("v_tambah_barang");
+			$this->load->view('v_footer');
 		}
 
 		function buat_barang(){
@@ -56,7 +60,7 @@
 		function edit_barang() {
 			$kode_barang = $this->input->post("kode_barang");
 			$toko_id = $this->session->userdata("has_toko");
-			$nama = $this->input->post("name");
+			$nama = $this->input->post("nama_barang");
 			$harga = $this->input->post("harga");
 			$informasi = $this->input->post("informasi");
 			$spec = $this->input->post("spec");
@@ -69,15 +73,10 @@
 
 			$this->load->library('upload', $config);
 
-	        if ( ! $this->upload->do_upload('userfile')) {
-		        $error = array('error' => $this->upload->display_errors());
-
-		        $this->load->view('v_tambah_barang', $error);
-	        } else {
-	        	$upload_data = $this->upload->data();
+	        if ($this->upload->do_upload('userfile')) {
+		        $upload_data = $this->upload->data();
 	        	$image = $upload_data["file_name"];
-
-	            $data = array(
+		        $data = array(
 	            	"barang_id" => $kode_barang,
 					"toko_id" => $toko_id,
 					"images" => $image,
@@ -88,9 +87,20 @@
 					"deskripsi" => $desc,
 					"catatan" => $catatan
 				);
-				$this->kelola_toko_model->update_barang($kode_barang, $data);
-				redirect('kelola_toko');
+	        } else {
+	        	$data = array(
+	            	"barang_id" => $kode_barang,
+					"toko_id" => $toko_id,
+					"nama_barang" => $nama,
+					"harga" => $harga,
+					"informasi" => $informasi,
+					"spesifikasi" => $spec,
+					"deskripsi" => $desc,
+					"catatan" => $catatan
+				);        	
 	        }
+	        $this->kelola_toko_model->update_barang($kode_barang, $data);
+			redirect('kelola_toko');
 		}
 
 		function delete_barang() {
