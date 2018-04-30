@@ -62,7 +62,7 @@
               <div class="modal-dialog" role="document">
                   <div class="modal-content">
                       <div class="modal-header">
-                          <h3 class="modal-title" id="exampleModalLabel">Tambah ke keranjang</h3>
+                          <label class="modal-title" id="exampleModalLabel"><h3>Tambah ke keranjang</h3></label>
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                               <span aria-hidden="true">&times;</span>
                           </button>

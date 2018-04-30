@@ -58,7 +58,6 @@
 								 	  ?>
 								 	<a class="dropdown-item" href="<?php echo site_url("profil") ?>">Profil</a>
 								    <a class="dropdown-item" href="<?php echo site_url('cart') ?>">Keranjang</a>
-								    <a class="dropdown-item" href="#">Another action</a>
 								    <div class="dropdown-divider"></div>
 								    <a class="dropdown-item" href="<?php echo site_url("login/logout") ?>">Logout</a>
 								  </div>

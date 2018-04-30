@@ -61,7 +61,7 @@
 							<p class="text-left">Deskripsi</p>
 						</div>
 						<div class="col-md-7">
-							<p class="text-left"><?php echo $barang->deskripsi; ?></p>
+							<p class="text-left"><?php echo $barang->deskripsi_b; ?></p>
 						</div>						
 					</div>
 					<div class="row">

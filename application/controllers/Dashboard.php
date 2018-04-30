@@ -8,8 +8,8 @@ class Dashboard extends CI_Controller {
 
 	public function index()
 	{
-		$limit_per_page = 2;
-        $start_index = ($this->uri->segment(2)) ? $this->uri->segment(2) : 0;
+		$limit_per_page = 18;
+        $start_index = ($this->uri->segment(18)) ? $this->uri->segment(18) : 0;
 
 		$data['barang'] = $this->Barang_Model->get_barang($limit_per_page, $start_index);
 
