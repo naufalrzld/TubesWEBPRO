@@ -5,8 +5,8 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets")?>/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url("assets")?>/css/mycss.css">
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
 </head>
 <body>
   <!-- Navigation Bar -->
@@ -57,6 +57,7 @@
 								 		}
 								 	  ?>
 								    <a class="dropdown-item" href="<?php echo site_url("profil") ?>">Profil</a>
+								    <a class="dropdown-item" href="<?php echo site_url("detail_barang") ?>">Detail</a>
 								    <div class="dropdown-divider"></div>
 								    <a class="dropdown-item" href="<?php echo site_url("login/logout") ?>">Logout</a>
 								  </div>

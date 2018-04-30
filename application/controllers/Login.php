@@ -38,7 +38,9 @@
 					"member_id" => $result->member_id,
 					"email" => $result->email,
 					"nama" => $result->nama,
-					"no_tlp" => $result->no_tlp
+					"no_tlp" => $result->no_tlp,
+					"alamat" => $result->alamat,
+					"foto" => $result->foto
 
 				);
 				$this->session->set_userdata('datauser',$sessionarray);
