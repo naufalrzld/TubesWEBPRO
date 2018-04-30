@@ -46,7 +46,7 @@
                         <td><?php echo $barang["harga"]; ?></td>
                         <td><?php echo $barang["informasi"]; ?></td>
                         <td><?php echo $barang["spesifikasi"]; ?></td>
-                        <td><?php echo $barang["deskripsi"]; ?></td>
+                        <td><?php echo $barang["deskripsi_b"]; ?></td>
                         <td><?php echo $barang["catatan"]; ?></td>
                         <td>
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit<?= $id ?>"><span class="glyphicon glyphicon-edit"></span></button>

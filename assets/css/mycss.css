@@ -243,6 +243,8 @@ img {
   }
   .gbr_pelapak{
   		border-radius: 50%;
+      width: 70px;
+      height: 70px;
   }
   .people{
   	margin-top: 30px;
@@ -339,4 +341,9 @@ img {
 
 .col-table {
   margin-bottom: 50px;
+}
+.foto{
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
 }
