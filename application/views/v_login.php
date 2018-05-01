@@ -15,7 +15,7 @@
 				<div class="col-sm-6">
 					<div class="web-tittle">
 						<a href="<?php echo site_url("dashboard")?>">
-							<img class="img-header-logo" src="<?php echo base_url("assets")?>/image/bukalapak.svg">
+							<img class="img-header-logo" src="<?php echo base_url("assets")?>/image/logo.svg">
 						</a>
 					</div>
 				</div>
@@ -31,7 +31,7 @@
 		<div class="login">
 			<form action="<?php echo site_url("login/do_login");?>" method="post">
 				<div class="logo">
-					<img class="img-logo" src="<?php echo base_url("assets")?>/image/bukalapak.svg">
+					<img class="img-logo" src="<?php echo base_url("assets")?>/image/logo.svg">
 				</div>
 				<div class="card">
 					<div class="row">

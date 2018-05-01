@@ -8,6 +8,7 @@
 			$toko_id =  $this->session->userdata("has_toko");
 
 			$data["dataBrg"] = $this->kelola_toko_model->get_data($toko_id);
+			$data["toko"] = $this->kelola_toko_model->get_toko($toko_id);
 			$this->load->view("v_header");
 			$this->load->view("v_kelola_toko", $data);
 			$this->load->view('v_footer');
@@ -49,7 +50,7 @@
 					"harga" => $harga,
 					"informasi" => $informasi,
 					"spesifikasi" => $spec,
-					"deskripsi" => $desc,
+					"deskripsi_b" => $desc,
 					"catatan" => $catatan
 				);
 				$this->kelola_toko_model->create($data);
@@ -100,6 +101,40 @@
 				);        	
 	        }
 	        $this->kelola_toko_model->update_barang($kode_barang, $data);
+			redirect('kelola_toko');
+		}
+
+		function edit_toko() {
+			$toko_id = $this->session->userdata("has_toko");
+			$nama = $this->input->post("nama_toko");
+			$desc = $this->input->post("desc");
+			$alamat = $this->input->post("alamat");
+
+			$config['upload_path']          = './assets/image/uploads/';
+	        $config['allowed_types']        = 'jpg|png';
+	        $config['max_size']             = 10000;
+
+			$this->load->library('upload', $config);
+
+	        if ($this->upload->do_upload('userfile')) {
+		        $upload_data = $this->upload->data();
+	        	$image = $upload_data["file_name"];
+		        $data = array(
+					"toko_id" => $toko_id,
+					"images" => $image,
+					"nama_toko" => $nama,
+					"deskripsi" => $desc,
+					"alamat" => $alamat
+				);
+	        } else {
+	        	$data = array(
+	            	"toko_id" => $toko_id,
+					"nama_toko" => $nama,
+					"deskripsi" => $desc,
+					"alamat" => $alamat
+				);        	
+	        }
+	        $this->kelola_toko_model->update_toko($toko_id, $data);
 			redirect('kelola_toko');
 		}
 

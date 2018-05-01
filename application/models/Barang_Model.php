@@ -15,4 +15,8 @@
 		public function get_data_row() {
 			return $this->db->get('barang')->num_rows();
 		}
+
+		public function addTransaction($data) {
+			$this->db->insert("pemesanan", $data);
+		}
 	}

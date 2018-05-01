@@ -75,4 +75,21 @@
 				</div>
 			</div>
 		</div>
+		<div class="row text-left">
+			<div class="col-md-9">
+				<div class="jumbotron text-center bg_detail" style="background-color: white;">
+					<form action="<?php echo site_url("detail_barang/komen")?>" method="post" enctype="multipart/form-data">
+						<p class="text-left">Komentar Anda</p>
+						<div class="row">
+							<div align="left" class="col-md-9">
+								<form action="<?php echo site_url("detail_barang/komen")?>" method="post">
+								 	<textarea style="height: 200px;" name="komen" class="form-control" rows="5" id="comment"></textarea>
+								 	<button  id="button_beli" class="btn btn-outline-danger btn-login">Submit</button>
+								</form>
+							</div>						
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
 	</div>

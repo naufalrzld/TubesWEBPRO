@@ -16,7 +16,7 @@
 				<div class="col-md-3">
 					<div class="web-tittle">
 						<a href="<?php echo site_url("dashboard")?>">
-							<img class="img-header-logo" src="<?php echo base_url("assets")?>/image/bukalapak.svg">
+							<img class="img-header-logo" src="<?php echo base_url("assets")?>/image/logo.svg">
 						</a>
 					</div>
 				</div>

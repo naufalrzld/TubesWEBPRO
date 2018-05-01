@@ -9,9 +9,7 @@
             <table align="center" width="100%">
                 <tr>
                     <td width="40%">
-                        <a href="#">
-                            <button class="btn btn-outline-danger btn-login">Edit Toko</button>
-                        </a>
+                        <button class="btn btn-outline-danger btn-login" data-toggle="modal" data-target="#editToko">Edit Toko</button>
                     </td>
                     <td width="40%">
                         <a href="<?php echo site_url('kelola_toko/tambah_barang')?>">
@@ -20,6 +18,46 @@
                     </td>
                 </tr>
             </table>
+        </div>
+        <div class="modal fade" id="editToko" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="exampleModalLabel">Edit Data</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <center><h3 class="modal-title" id="exampleModalLabel">Data Toko</h3></center>
+                        <!-- Insert Form here -->
+                        <form method="POST" action="<?php echo site_url('kelola_toko/edit_toko') ?>" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">ID Toko</label>
+                                <input type="text" class="form-control" value="<?= $toko->toko_id ?>" disabled>
+                                <input type="hidden" name="kode_barang" value="<?= $toko->toko_id ?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Nama Toko</label>
+                                <input type="text" class="form-control" name="nama_toko" value="<?= $toko->nama_toko ?>" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Deskripsi</label>
+                                <input type="text" class="form-control" name="desc" value="<?= $toko->deskripsi ?>" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Alamat</label>
+                                <input type="text" class="form-control" name="alamat" value="<?= $toko->alamat ?>" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Gambar</label>
+                                <input type="file" name="userfile" size="20"/>
+                            </div>
+                            <button type="submit" name="edit" class="btn btn-primary btn-block">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="col-table col-md-12">
             <table class="table table-striped">

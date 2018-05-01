@@ -14,6 +14,15 @@
 			$query = $this->db->get("barang");
 			return $query->result_array();
 		}
+		function get_toko($id){
+			$this->db->where("toko_id", $id);
+			$query = $this->db->get("toko");
+			return $query->row();
+		}
+		function update_toko($toko_id, $data) {
+			$this->db->where("toko_id", $toko_id);
+			$this->db->update("toko", $data);
+		}
 		function update_barang($barang_id, $data) {
 			$this->db->where("barang_id", $barang_id);
 			$this->db->update("barang", $data);

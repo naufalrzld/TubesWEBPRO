@@ -27,7 +27,8 @@ class Cart extends CI_Controller {
 		$output .= '
 			<tr>
 				<th colspan="3">Total</th>
-				<th colspan="2">'.'Rp '.number_format($this->cart->total()).'</th>
+				<th>'.'Rp '.number_format($this->cart->total()).'</th>
+				<th><button type="button" class="checkout btn btn-danger btn-xs">Checkout</button></th>
 			</tr>
 		';
 		return $output;
@@ -43,6 +44,27 @@ class Cart extends CI_Controller {
 			'qty' => 0,
 		);
 		$this->cart->update($data);
+		echo $this->show_cart();
+	}
+
+	function checkout() {
+		$this->load->model("barang_model");
+		foreach ($this->cart->contents() as $items) {
+			$data = array(
+				"member_id" => $this->session->userdata("member_id"),
+				"barang_id" => $items["id"],
+				"kuantitas" => $items["qty"],
+				"total" => $items["price"]
+			);
+			$this->barang_model->addTransaction($data);
+
+			$data = array(
+				'rowid' => $items["rowid"], 
+				'qty' => 0,
+			);
+			$this->cart->update($data);
+
+		}
 		echo $this->show_cart();
 	}
 }

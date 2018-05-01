@@ -2,7 +2,7 @@
 	<div class="container">
       <!-- List Barang Begin -->
     <div class="row">
-        <div class="col-md-8 col-sm-4 col-xs-6">
+        <div class="col-md-8 col-sm-8 col-xs-8">
           <h4>Shopping Cart</h4>
           <table class="table table-striped">
             <thead>
